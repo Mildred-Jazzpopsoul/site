@@ -15,7 +15,21 @@
     "bio": "Mildred est un duo Jazz, Pop & Soul proposant des prestations musicales élégantes et chaleureuses pour mariages, cocktails, événements privés et événements professionnels.\n\nAvec un répertoire mêlant grands standards jazz, pop et soul, Mildred Duo crée une ambiance musicale adaptée à chaque moment : cérémonie, cocktail, dîner, réception ou soirée.\n\nLe duo se déplace en Seine-Maritime, dans l’Eure et dans l’Oise, notamment à Rouen, Le Havre, Dieppe, Évreux, Vernon, Beauvais, Compiègne, Chantilly et dans les environs.\n\nContactez Mildred Duo pour votre projet musical et vos demandes de réservation.",
     "photo": ""
   },
-  "media_section": null,
+  "media_section": {
+    "title": "",
+    "tracks": [
+      {
+        "title": "",
+        "file": "",
+        "embed_url": "https://drive.google.com/file/d/1UeyS6Qv-P22icJOCjlhAKNTgd1vJ0e7u/preview"
+      },
+      {
+        "title": "",
+        "file": "",
+        "embed_url": "https://drive.google.com/file/d/1UeyS6Qv-P22icJOCjlhAKNTgd1vJ0e7u/preview"
+      }
+    ]
+  },
   "gallery_section": null,
   "contact_section": null
 }
