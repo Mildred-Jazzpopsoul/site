@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Mildred-Jazzpopsoul/site
+  repo: Mildred-Jazzpopsoul/site  # <-- Remplacer par votre pseudo/nom-du-repo GitHub
   branch: main
 
 media_folder: "images"
@@ -11,63 +11,83 @@ collections:
     label: "Gestion Globale du Site"
     files:
       - file: "content.json"
-        label: "Rubriques & Contenus"
+        label: "Configuration & Rubriques"
         name: "content"
         fields:
-          # ACCUEIL
+
+          # --- GESTION DE LA VISIBILITÉ DES RUBRIQUES ---
+          - name: "active_sections"
+            label: "Rubriques à afficher sur le site (décocher pour masquer)"
+            widget: "select"
+            multiple: true
+            required: false
+            options:
+              - { label: "Accueil / Hero", value: "hero" }
+              - { label: "À Propos", value: "about" }
+              - { label: "Musique & Vidéos", value: "media" }
+              - { label: "Galerie Photos", value: "gallery" }
+              - { label: "Contact", value: "contact" }
+
+          # --- ACCUEIL ---
           - name: "hero"
-            label: " Rubrique Accueil"
+            label: "Rubrique Accueil"
             widget: "object"
+            required: false
             fields:
-              - { label: "Titre principal", name: "title", widget: "string", default: "Nom du Groupe" }
-              - { label: "Sous-titre", name: "subtitle", widget: "string", default: "Neon Rock / Synth" }
+              - { label: "Titre principal", name: "title", widget: "string", required: false }
+              - { label: "Sous-titre", name: "subtitle", widget: "string", required: false }
               - { label: "Image de fond", name: "bg_image", widget: "image", required: false }
 
-          # À PROPOS
+          # --- À PROPOS ---
           - name: "about"
-            label: " Rubrique À Propos"
+            label: "Rubrique À Propos"
             widget: "object"
+            required: false
             fields:
-              - { label: "Titre de section", name: "title", widget: "string", default: "À Propos" }
-              - { label: "Texte biographie", name: "bio", widget: "text" }
-              - { label: "Photo d'illustration", name: "photo", widget: "image", required: false }
+              - { label: "Titre de section", name: "title", widget: "string", required: false }
+              - { label: "Texte de présentation", name: "bio", widget: "text", required: false }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
 
-          # MÉDIAS / MUSIQUE
+          # --- MUSIQUE & VIDÉOS ---
           - name: "media_section"
-            label: " Rubrique Musique & Vidéos"
+            label: "Rubrique Musique & Vidéos"
             widget: "object"
+            required: false
             fields:
-              - { label: "Titre de section", name: "title", widget: "string", default: "Musique & Vidéos" }
+              - { label: "Titre de section", name: "title", widget: "string", required: false }
               - name: "tracks"
-                label: "Liste des morceaux / vidéos (Glisser-déposer pour réordonner)"
+                label: "Liste des médias"
                 widget: "list"
+                required: false
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Titre", name: "title", widget: "string" }
-                  - { label: "Type", name: "type", widget: "select", options: ["audio", "video", "embed_youtube"] }
-                  - { label: "Fichier (mp3/mp4)", name: "file", widget: "file", required: false }
-                  - { label: "Lien YouTube/Spotify", name: "url", widget: "string", required: false }
+                  - { label: "Titre du morceau / vidéo", name: "title", widget: "string", required: false }
+                  - { label: "Fichier audio / vidéo léger", name: "file", widget: "file", required: false }
+                  - { label: "Lien d'intégration (URL Google Drive preview, YouTube, Vimeo...)", name: "embed_url", widget: "string", required: false }
 
-          # GALERIE PHOTOS
+          # --- GALERIE PHOTOS ---
           - name: "gallery_section"
-            label: " Galerie Photos"
+            label: "Galerie Photos"
             widget: "object"
+            required: false
             fields:
-              - { label: "Titre de la galerie", name: "title", widget: "string", default: "Galerie Photos" }
+              - { label: "Titre de la galerie", name: "title", widget: "string", required: false }
               - name: "photos"
-                label: "Photos (Ajouter/Supprimer/Réordonner)"
+                label: "Photos"
                 widget: "list"
+                required: false
                 summary: "{{fields.caption}}"
                 fields:
-                  - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Photo", name: "image", widget: "image", required: false }
                   - { label: "Légende", name: "caption", widget: "string", required: false }
 
-          # CONTACT
+          # --- CONTACT ---
           - name: "contact_section"
-            label: " Contact & Liens"
+            label: "Contact & Réseaux"
             widget: "object"
+            required: false
             fields:
-              - { label: "Titre section contact", name: "title", widget: "string", default: "Contact" }
-              - { label: "Email de contact", name: "email", widget: "string", required: false }
+              - { label: "Titre de section", name: "title", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
               - { label: "Lien Facebook", name: "facebook_url", widget: "string", required: false }
               - { label: "Lien Instagram", name: "instagram_url", widget: "string", required: false }
