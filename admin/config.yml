@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Mildred-Jazzpopsoul/site  # <-- Remplacer par votre pseudo/nom-du-repo GitHub
+  repo: TON-PSEUDO/TON-REPO  # <-- Remplacez par votre pseudo/nom-du-repo GitHub
   branch: main
 
 media_folder: "images"
@@ -15,7 +15,7 @@ collections:
         name: "content"
         fields:
 
-          # --- GESTION DE LA VISIBILITÉ DES RUBRIQUES ---
+          # --- VISIBILITÉ DES RUBRIQUES ---
           - name: "active_sections"
             label: "Rubriques à afficher sur le site (décocher pour masquer)"
             widget: "select"
@@ -25,7 +25,8 @@ collections:
               - { label: "Accueil / Hero", value: "hero" }
               - { label: "À Propos", value: "about" }
               - { label: "Musique & Vidéos", value: "media" }
-              - { label: "Galerie Photos", value: "gallery" }
+              - { label: "Agenda (Google Calendar)", value: "agenda" }
+              - { label: "Galerie Photos (Carrousel)", value: "gallery" }
               - { label: "Contact", value: "contact" }
 
           # --- ACCUEIL ---
@@ -34,9 +35,9 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { label: "Titre principal", name: "title", widget: "string", required: false }
-              - { label: "Sous-titre", name: "subtitle", widget: "string", required: false }
-              - { label: "Image de fond", name: "bg_image", widget: "image", required: false }
+              - { label: "Logo du Groupe", name: "logo", widget: "image", required: false }
+              - { label: "Titre Néon du Groupe", name: "title", widget: "string", required: false }
+              - { label: "Sous-titre / Slogan", name: "subtitle", widget: "string", required: false }
 
           # --- À PROPOS ---
           - name: "about"
@@ -46,39 +47,47 @@ collections:
             fields:
               - { label: "Titre de section", name: "title", widget: "string", required: false }
               - { label: "Texte de présentation", name: "bio", widget: "text", required: false }
-              - { label: "Photo", name: "photo", widget: "image", required: false }
 
-          # --- MUSIQUE & VIDÉOS ---
+          # --- MUSIQUE & VIDÉOS (LIENS GOOGLE DRIVE MULTIPLES) ---
           - name: "media_section"
-            label: "Rubrique Musique & Vidéos"
+            label: "Rubrique Vidéos Google Drive & Médias"
             widget: "object"
             required: false
             fields:
               - { label: "Titre de section", name: "title", widget: "string", required: false }
               - name: "tracks"
-                label: "Liste des médias"
+                label: "Liste des vidéos Google Drive (Ajouter autant de liens /preview que souhaité)"
                 widget: "list"
                 required: false
                 summary: "{{fields.title}}"
                 fields:
-                  - { label: "Titre du morceau / vidéo", name: "title", widget: "string", required: false }
-                  - { label: "Fichier audio / vidéo léger", name: "file", widget: "file", required: false }
-                  - { label: "Lien d'intégration (URL Google Drive preview, YouTube, Vimeo...)", name: "embed_url", widget: "string", required: false }
+                  - { label: "Titre de la vidéo", name: "title", widget: "string", required: false }
+                  - { label: "Lien d'intégration Google Drive (URL se terminant par /preview)", name: "embed_url", widget: "string", required: false }
 
-          # --- GALERIE PHOTOS ---
+          # --- AGENDA GOOGLE CALENDAR ---
+          - name: "agenda_section"
+            label: "Rubrique Agenda Google Calendar"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Titre de la section", name: "title", widget: "string", required: false }
+              - { label: "URL d'intégration Google Calendar (Lien src de l'iframe)", name: "calendar_url", widget: "string", required: false }
+
+          # --- GALERIE PHOTOS & DOSSIER EXTERNE ---
           - name: "gallery_section"
-            label: "Galerie Photos"
+            label: "Galerie Photos (Carrousel)"
             widget: "object"
             required: false
             fields:
               - { label: "Titre de la galerie", name: "title", widget: "string", required: false }
+              - { label: "Lien vers un répertoire photo externe (Google Drive / Photos)", name: "external_folder_url", widget: "string", required: false }
               - name: "photos"
-                label: "Photos"
+                label: "Photos du carrousel"
                 widget: "list"
                 required: false
                 summary: "{{fields.caption}}"
                 fields:
-                  - { label: "Photo", name: "image", widget: "image", required: false }
+                  - { label: "Image", name: "image", widget: "image", required: false }
                   - { label: "Légende", name: "caption", widget: "string", required: false }
 
           # --- CONTACT ---
@@ -87,7 +96,4 @@ collections:
             widget: "object"
             required: false
             fields:
-              - { label: "Titre de section", name: "title", widget: "string", required: false }
-              - { label: "Email", name: "email", widget: "string", required: false }
-              - { label: "Lien Facebook", name: "facebook_url", widget: "string", required: false }
-              - { label: "Lien Instagram", name: "instagram_url", widget: "string", required: false }
+              - { label: "Email de contact", name: "email", widget: "string", required: false }
