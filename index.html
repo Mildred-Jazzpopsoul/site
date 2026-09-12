@@ -47,18 +47,20 @@
       border: 0;
     }
 
-    /* Styles du Carrousel Photos */
+    /* Styles du Carrousel Photos (Photos en entier) */
     .carousel-container {
       position: relative;
-      max-width: 800px;
+      max-width: 900px;
       margin: 20px auto;
       overflow: hidden;
       border-radius: 8px;
+      background-color: #111; /* Fond sombre pour encadrer proprement les visuels */
     }
 
     .carousel-slide {
       display: none;
       text-align: center;
+      padding: 10px 0;
     }
 
     .carousel-slide.active {
@@ -67,8 +69,8 @@
 
     .carousel-slide img {
       width: 100%;
-      max-height: 500px;
-      object-fit: cover;
+      height: 550px;
+      object-fit: contain; /* Affiche la photo entière sans aucun rognage */
       border-radius: 8px;
     }
 
@@ -83,6 +85,7 @@
       padding: 10px 15px;
       cursor: pointer;
       border-radius: 4px;
+      z-index: 10;
     }
 
     .carousel-btn.prev { left: 10px; }
@@ -161,7 +164,7 @@
     <div class="container">
       <h2 class="agenda-title">Agenda & Concerts</h2>
       <div class="responsive-iframe-container">
-        <iframe id="calendar-iframe" src="https://calendar.google.com/calendar/embed?src=mildredwhatelse%40gmail.com&ctz=Europe%2FParis" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <iframe id="calendar-iframe" src="" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
       </div>
     </div>
   </section>
@@ -199,7 +202,6 @@
   <script>
     let currentSlide = 0;
 
-    // Helper pour nettoyer le chemin relatif des images
     function fixImagePath(path) {
       if (!path) return '';
       if (path.startsWith('http://') || path.startsWith('https://')) return path;
@@ -325,7 +327,7 @@
                 const slide = document.createElement('div');
                 slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
                 const imgSrc = fixImagePath(photo.image);
-                slide.innerHTML = `<img src="${imgSrc}" alt="Photo"><p>${photo.caption || ''}</p>`;
+                slide.innerHTML = `<img src="${imgSrc}" alt="Photo"><p style="margin-top:8px; color:#ccc;">${photo.caption || ''}</p>`;
                 slidesContainer.appendChild(slide);
               }
             });
