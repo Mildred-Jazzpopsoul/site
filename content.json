@@ -3,6 +3,7 @@
     "about",
     "hero",
     "contact",
+    "gallery",
     "media",
     "agenda"
   ],
@@ -40,8 +41,16 @@
     "external_folder_url": "",
     "photos": [
       {
-        "image": "",
+        "image": "/images/Flyer - Duo Musical Jazz Pop Soul.png",
         "caption": ""
+      },
+      {
+        "image": "/images/mildredwhatelse_qrcode_copy.jpg",
+        "caption": "QR-Code Instagram"
+      },
+      {
+        "image": "/images/QR code FB.jpg",
+        "caption": "QR-Code FaceBook"
       }
     ]
   },
