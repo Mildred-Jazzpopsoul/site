@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: Mildred-Jazzpopsoul/site
   branch: main
 
@@ -16,6 +16,3 @@ collections:
         fields:
           - {label: "Nom du Groupe", name: "title", widget: "string"}
           - {label: "Annonce Principale", name: "subtitle", widget: "string"}
-          - {label: "Lien Google Calendar Embed", name: "google_calendar_url", widget: "string"}
-          - {label: "Lien Facebook", name: "facebook_url", widget: "string"}
-          - {label: "Lien Instagram", name: "instagram_url", widget: "string"}
