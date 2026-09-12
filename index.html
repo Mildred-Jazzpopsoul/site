@@ -220,5 +220,45 @@ subtitle: Jazz Pop Soul
       });
     }
   </script>
+  
+  <script>
+  // Script de liaison dynamique avec le CMS
+  async function loadSiteContent() {
+    try {
+      const response = await fetch('content.json?v=' + new Date().getTime());
+      if (!response.ok) return;
+      const data = await response.json();
+
+      // Mettre à jour la section Hero
+      if (data.hero) {
+        if (data.hero.title) {
+          const heroTitle = document.querySelector('.hero h1');
+          if (heroTitle) heroTitle.textContent = data.hero.title;
+        }
+        if (data.hero.subtitle) {
+          const heroSub = document.querySelector('.hero p');
+          if (heroSub) heroSub.textContent = data.hero.subtitle;
+        }
+      }
+
+      // Mettre à jour la section À Propos
+      if (data.about) {
+        if (data.about.title) {
+          const aboutTitle = document.querySelector('#about h2');
+          if (aboutTitle) aboutTitle.textContent = data.about.title;
+        }
+        if (data.about.bio) {
+          const aboutBio = document.querySelector('#about .bio-text');
+          if (aboutBio) aboutBio.textContent = data.about.bio;
+        }
+      }
+    } catch (e) {
+      console.log('Chargement standard du site.');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadSiteContent);
+  </script>
+
 </body>
 </html>
