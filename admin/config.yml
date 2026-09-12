@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "media"
+public_folder: "media"
+
+collections:
+  - name: "pages"
+    label: "Contenu des Sections"
+    files:
+      - file: "index.html"
+        label: "Page d'accueil"
+        name: "index"
+        fields:
+          - {label: "Nom du Groupe", name: "title", widget: "string"}
+          - {label: "Annonce Principale", name: "subtitle", widget: "string"}
+          - {label: "Lien Google Calendar Embed", name: "google_calendar_url", widget: "string"}
+          - {label: "Lien Facebook", name: "facebook_url", widget: "string"}
+          - {label: "Lien Instagram", name: "instagram_url", widget: "string"}

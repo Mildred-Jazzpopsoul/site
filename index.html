@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nom du Groupe | Neon Rock / Synth</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8A2BE2">
+  <meta name="description" content="Site officiel du groupe : musique, vidéos, agenda de tournée, communauté et merchandising.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo-text">VOTRE<span>GROUPE</span></a>
+      <nav>
+        <ul>
+          <li><a href="#about">Le Groupe</a></li>
+          <li><a href="#music">Musique</a></li>
+          <li><a href="#videos">Vidéos</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#merch">Boutique</a></li>
+          <li><a href="#friends">Partenaires</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="neon-title">NOM DU GROUPE</h1>
+      <p class="neon-subtitle">NOUVEAU SINGLE "NEON RIDER" DISPONIBLE</p>
+      <div class="hero-buttons">
+        <a href="#agenda" class="btn btn-primary">DATES DE CONCERT</a>
+        <a href="#music" class="btn btn-secondary">ÉCOUTER L'ALBUM</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Le Groupe -->
+  <section id="about" class="section container">
+    <h2 class="section-title">LE GROUPE</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Bienvenue sur le site officiel. Découvrez notre univers musical entre synthwave rétro-futuriste, guitares incisives et visuels néon immersifs.</p>
+        <p>Restez informés de nos sorties et de nos concerts en ajoutant ce site sur votre écran d'accueil (compatible installation PWA mobile).</p>
+      </div>
+      <div class="about-image">
+        <div class="img-frame">
+          <img src="images/band-photo.jpg" alt="Photo officielle du groupe">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Musique & Bandes Sons -->
+  <section id="music" class="section bg-darker">
+    <div class="container">
+      <h2 class="section-title">BANDES SONS & LECTEUR</h2>
+      
+      <!-- Lecteur Audio Natif MP3/OGG -->
+      <div class="audio-player-card">
+        <h3>DÉMO EXCLUSIVE (FICHIER MP3)</h3>
+        <p>Écoutez notre dernier extrait audio hébergé sur le site :</p>
+        <audio controls class="custom-audio-player">
+          <source src="media/demo-track.mp3" type="audio/mpeg">
+          Votre navigateur ne supporte pas le lecteur audio.
+        </audio>
+      </div>
+
+      <!-- Intégration Widget Spotify / Soundcloud -->
+      <div class="music-player-card">
+        <h3>STREAMING (SPOTIFY / SOUNDCLOUD)</h3>
+        <div class="embed-responsive">
+          <!-- Remplacez le src par l'iframe de votre lecteur Spotify / Soundcloud / Bandcamp -->
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1DF26iX2sRrtmXGTh745fD?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vidéos & Clips -->
+  <section id="videos" class="section container">
+    <h2 class="section-title">VIDÉOS & CLIPS</h2>
+    <div class="video-grid">
+      
+      <!-- Intégration YouTube -->
+      <div class="video-card">
+        <div class="video-container">
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Clip Officiel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h3>Clip Officiel - Neon Rider</h3>
+          <p>Réalisé par le studio CyberVision.</p>
+        </div>
+      </div>
+
+      <!-- Fichier Vidéo Hébergé (MP4) -->
+      <div class="video-card">
+        <div class="video-container">
+          <video controls poster="images/video-poster.jpg">
+            <source src="media/live-teaser.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture vidéo.
+          </video>
+        </div>
+        <div class="video-info">
+          <h3>Teaser Live Backstage</h3>
+          <p>Extrait vidéo MP4 direct.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Agenda Sync Google Calendar -->
+  <section id="agenda" class="section bg-darker">
+    <div class="container">
+      <h2 class="section-title">AGENDA & CONCERTS</h2>
+      <p class="section-desc">Mise à jour automatique en temps réel via Google Calendar :</p>
+      
+      <div class="calendar-wrapper">
+        <!-- Remplacez SRC ci-dessous par le lien d'intégration de VOTRE Google Calendar -->
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FParis&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&src=aTBya3VtbWZwcms0MGc4ZWU3a2ZsaGpxcG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%238e24aa" style="border:solid 1px #9d4edd" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boutique / Merch (Fonctionnalité suggérée) -->
+  <section id="merch" class="section container">
+    <h2 class="section-title">BOUTIQUE & MERCHANDISING</h2>
+    <div class="merch-grid">
+      <div class="merch-card">
+        <img src="images/merch-tshirt.jpg" alt="T-Shirt Groupe">
+        <h3>T-Shirt Neon Edition</h3>
+        <span class="price">25,00 €</span>
+        <a href="https://votre-boutique-helloasso-ou-bandcamp.com" target="_blank" class="btn btn-small">COMMANDER</a>
+      </div>
+      <div class="merch-card">
+        <img src="images/merch-album.jpg" alt="Vinyle Album">
+        <h3>Vinyle "Neon Dreams"</h3>
+        <span class="price">30,00 €</span>
+        <a href="https://votre-boutique-helloasso-ou-bandcamp.com" target="_blank" class="btn btn-small">COMMANDER</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partenaires & Groupes Amis -->
+  <section id="friends" class="section bg-darker">
+    <div class="container">
+      <h2 class="section-title">PARTENAIRES & GROUPES AMIS</h2>
+      <div class="partners-grid">
+        
+        <div class="partner-card">
+          <img src="images/logo-partner1.png" alt="Logo Partenaire">
+          <h3>Le Studio Underground</h3>
+          <p>Studio d'enregistrement & de répétition partenaire.</p>
+          <a href="#" target="_blank" class="partner-link">Visiter le site &rarr;</a>
+        </div>
+
+        <div class="partner-card">
+          <img src="images/logo-band2.png" alt="Logo Groupe Ami">
+          <h3>SynthWave Alliance</h3>
+          <p>Groupe ami - Synthpop / Cyberpunk de Lyon.</p>
+          <a href="#" target="_blank" class="partner-link">Découvrir leur musique &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Réseaux Sociaux -->
+  <section id="contact" class="section container">
+    <h2 class="section-title">RÉSEAUX & CONTACT</h2>
+    <div class="contact-box">
+      <p>Suivez-nous au quotidien et contactez-nous pour le booking :</p>
+      
+      <!-- Liens Réseaux Sociaux Directs -->
+      <div class="social-links-container">
+        <a href="https://facebook.com/votrepage" target="_blank" class="social-btn facebook">FACEBOOK</a>
+        <a href="https://instagram.com/votrecompte" target="_blank" class="social-btn instagram">INSTAGRAM</a>
+        <a href="https://youtube.com/votrechaine" target="_blank" class="social-btn youtube">YOUTUBE</a>
+        <a href="https://open.spotify.com/artist/votreid" target="_blank" class="social-btn spotify">SPOTIFY</a>
+      </div>
+
+      <div class="contact-email-wrapper">
+        <p>Booking & Presse :</p>
+        <a href="mailto:contact@votregroupe.com" class="neon-email">contact@votregroupe.com</a>
+      </div>
+
+      <!-- Kit Presse / Presskit (Fonctionnalité suggérée) -->
+      <div class="presskit-download">
+        <a href="media/Presskit-NomDuGroupe.pdf" download class="btn btn-secondary">📥 TÉLÉCHARGER LE PRESSKIT / RIDER TECHNIQUE (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 NOM DU GROUPE. Tous droits réservés.</p>
+      <p><a href="admin/">Panneau de Gestion du Contenu (Decap CMS)</a></p>
+    </div>
+  </footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+  </script>
+</body>
+</html>
