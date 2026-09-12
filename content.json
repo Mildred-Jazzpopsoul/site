@@ -1,0 +1,17 @@
+{
+  "active_sections": [
+    "hero",
+    "about",
+    "media",
+    "contact"
+  ],
+  "hero": {
+    "title": "Mildred",
+    "subtitle": "Jazz Pop Soul",
+    "bg_image": ""
+  },
+  "about": null,
+  "media_section": null,
+  "gallery_section": null,
+  "contact_section": null
+}
