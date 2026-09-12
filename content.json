@@ -19,17 +19,25 @@
     "title": "",
     "tracks": [
       {
-        "title": "",
-        "file": "",
-        "embed_url": "https://drive.google.com/file/d/1UeyS6Qv-P22icJOCjlhAKNTgd1vJ0e7u/preview"
-      },
-      {
-        "title": "",
+        "title": "Morgan Freeman - Composition",
         "file": "",
         "embed_url": "https://drive.google.com/file/d/1UeyS6Qv-P22icJOCjlhAKNTgd1vJ0e7u/preview"
       }
     ]
   },
-  "gallery_section": null,
-  "contact_section": null
+  "gallery_section": {
+    "title": "",
+    "photos": [
+      {
+        "image": "/images/Flyer - Duo Musical Jazz Pop Soul.png",
+        "caption": ""
+      }
+    ]
+  },
+  "contact_section": {
+    "title": "",
+    "email": "",
+    "facebook_url": "",
+    "instagram_url": ""
+  }
 }
