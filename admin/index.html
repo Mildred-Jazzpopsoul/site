@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin - Gestion du Site</title>
+  <script>
+    (function() {
+      const PASSWORD = "VOTRE_MOT_DE_PASSE_ICI"; // <-- Personnalisez votre mot de passe d'accès
+      const authKey = "admin_session_auth";
+      
+      if (sessionStorage.getItem(authKey) !== "true") {
+        const input = prompt("Saisissez le mot de passe d'accès à l'administration :");
+        if (input === PASSWORD) {
+          sessionStorage.setItem(authKey, "true");
+        } else {
+          alert("Mot de passe incorrect.");
+          window.location.href = "../";
+        }
+      }
+    })();
+  </script>
 </head>
 <body>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
