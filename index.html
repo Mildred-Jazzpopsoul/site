@@ -195,9 +195,16 @@
     </div>
   </footer>
 
-  <!-- Gestion du Carrousel & Connexion CMS -->
+  <!-- Script d'intégration et correction de liens d'images -->
   <script>
     let currentSlide = 0;
+
+    // Helper pour nettoyer le chemin relatif des images
+    function fixImagePath(path) {
+      if (!path) return '';
+      if (path.startsWith('http://') || path.startsWith('https://')) return path;
+      return path.startsWith('/') ? path.slice(1) : path;
+    }
 
     function showSlide(index) {
       const slides = document.querySelectorAll('.carousel-slide');
@@ -254,12 +261,13 @@
           if (subEl && data.hero.subtitle) subEl.textContent = data.hero.subtitle;
 
           if (data.hero.logo) {
+            const logoSrc = fixImagePath(data.hero.logo);
             if (navLogoEl) {
-              navLogoEl.src = data.hero.logo;
+              navLogoEl.src = logoSrc;
               navLogoEl.style.display = 'inline-block';
             }
             if (heroLogoEl) {
-              heroLogoEl.src = data.hero.logo;
+              heroLogoEl.src = logoSrc;
               heroLogoEl.style.display = 'block';
             }
           }
@@ -273,7 +281,7 @@
           if (bioEl && data.about.bio) bioEl.textContent = data.about.bio;
         }
 
-        // 4. Section Vidéos Google Drive multiples
+        // 4. Section Vidéos Google Drive
         if (data.media_section) {
           const titleEl = document.querySelector('.media-title');
           if (titleEl && data.media_section.title) titleEl.textContent = data.media_section.title;
@@ -294,7 +302,7 @@
           }
         }
 
-        // 5. Google Calendar paramétrable
+        // 5. Google Calendar
         if (data.agenda_section) {
           const titleEl = document.querySelector('.agenda-title');
           const iframeEl = document.getElementById('calendar-iframe');
@@ -304,7 +312,7 @@
           }
         }
 
-        // 6. Carrousel Galerie Photos & Répertoire Externe
+        // 6. Carrousel Galerie Photos
         if (data.gallery_section) {
           const titleEl = document.querySelector('.gallery-title');
           if (titleEl && data.gallery_section.title) titleEl.textContent = data.gallery_section.title;
@@ -316,7 +324,8 @@
               if (photo.image) {
                 const slide = document.createElement('div');
                 slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
-                slide.innerHTML = `<img src="${photo.image}" alt="Photo"><p>${photo.caption || ''}</p>`;
+                const imgSrc = fixImagePath(photo.image);
+                slide.innerHTML = `<img src="${imgSrc}" alt="Photo"><p>${photo.caption || ''}</p>`;
                 slidesContainer.appendChild(slide);
               }
             });
