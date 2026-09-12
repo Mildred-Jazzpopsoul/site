@@ -7,6 +7,7 @@
     "gallery"
   ],
   "hero": {
+    "logo": "/images/Logo1.jpg",
     "title": "Mildred",
     "subtitle": "Jazz Pop Soul",
     "bg_image": "/images/Logo1.jpg"
@@ -21,13 +22,22 @@
     "tracks": [
       {
         "title": "Morgan Freeman - Composition",
-        "file": "",
-        "embed_url": "https://drive.google.com/file/d/1UeyS6Qv-P22icJOCjlhAKNTgd1vJ0e7u/preview"
+        "embed_url": "https://drive.google.com/file/d/1UeyS6Qv-P22icJOCjlhAKNTgd1vJ0e7u/preview",
+        "file": ""
+      },
+      {
+        "title": "Uptown Girl",
+        "embed_url": "https://drive.google.com/file/d/15-syaYYLmCE0QudL-O5Zxl8myOqm3aik/preview"
       }
     ]
   },
+  "agenda_section": {
+    "title": "Agenda",
+    "calendar_url": "<iframe src=\"https://calendar.google.com/calendar/embed?src=mildredwhatelse%40gmail.com&ctz=Europe%2FParis\" style=\"border: 0\" width=\"800\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+  },
   "gallery_section": {
     "title": "Flyer",
+    "external_folder_url": "",
     "photos": [
       {
         "image": "/images/Flyer - Duo Musical Jazz Pop Soul.png",
@@ -36,9 +46,9 @@
     ]
   },
   "contact_section": {
-    "title": "Contact et Réseaux",
     "email": "mildredwhatelse@gmail.com",
     "facebook_url": "",
-    "instagram_url": "https://www.instagram.com/mildredwhatelse?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+    "instagram_url": "https://www.instagram.com/mildredwhatelse?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
+    "title": "Contact et Réseaux"
   }
 }
