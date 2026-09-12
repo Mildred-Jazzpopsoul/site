@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TON-PSEUDO/TON-REPO  # <-- Remplacez par votre pseudo/nom-du-repo GitHub
+  repo: Mildred-Jazzpopsoul/site  # <-- Remplacez par votre pseudo/nom-du-repo GitHub
   branch: main
 
 media_folder: "images"
