@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Mildred-Jazzpopsoul/site  # <-- Remplacez par votre pseudo/nom-du-repo GitHub
+  repo: Mildred-Jazzpopsoul/site # <-- Remplacez par votre pseudo/nom-du-repo GitHub
   branch: main
 
 media_folder: "images"
@@ -17,7 +17,7 @@ collections:
 
           # --- VISIBILITÉ DES RUBRIQUES ---
           - name: "active_sections"
-            label: "Rubriques à afficher sur le site (décocher pour masquer)"
+            label: "Rubriques à afficher sur le site"
             widget: "select"
             multiple: true
             required: false
@@ -48,7 +48,7 @@ collections:
               - { label: "Titre de section", name: "title", widget: "string", required: false }
               - { label: "Texte de présentation", name: "bio", widget: "text", required: false }
 
-          # --- MUSIQUE & VIDÉOS (LIENS GOOGLE DRIVE MULTIPLES) ---
+          # --- MUSIQUE & VIDÉOS ---
           - name: "media_section"
             label: "Rubrique Vidéos Google Drive & Médias"
             widget: "object"
@@ -56,31 +56,31 @@ collections:
             fields:
               - { label: "Titre de section", name: "title", widget: "string", required: false }
               - name: "tracks"
-                label: "Liste des vidéos Google Drive (Ajouter autant de liens /preview que souhaité)"
+                label: "Liste des vidéos Google Drive"
                 widget: "list"
                 required: false
                 summary: "{{fields.title}}"
                 fields:
                   - { label: "Titre de la vidéo", name: "title", widget: "string", required: false }
-                  - { label: "Lien d'intégration Google Drive (URL se terminant par /preview)", name: "embed_url", widget: "string", required: false }
+                  - { label: "Lien d'intégration Google Drive (/preview)", name: "embed_url", widget: "string", required: false }
 
-          # --- AGENDA GOOGLE CALENDAR ---
+          # --- AGENDA ---
           - name: "agenda_section"
             label: "Rubrique Agenda Google Calendar"
             widget: "object"
             required: false
             fields:
               - { label: "Titre de la section", name: "title", widget: "string", required: false }
-              - { label: "URL d'intégration Google Calendar (Lien src de l'iframe)", name: "calendar_url", widget: "string", required: false }
+              - { label: "URL d'intégration Google Calendar", name: "calendar_url", widget: "string", required: false }
 
-          # --- GALERIE PHOTOS & DOSSIER EXTERNE ---
+          # --- GALERIE PHOTOS ---
           - name: "gallery_section"
             label: "Galerie Photos (Carrousel)"
             widget: "object"
             required: false
             fields:
               - { label: "Titre de la galerie", name: "title", widget: "string", required: false }
-              - { label: "Lien vers un répertoire photo externe (Google Drive / Photos)", name: "external_folder_url", widget: "string", required: false }
+              - { label: "Lien vers un répertoire photo externe", name: "external_folder_url", widget: "string", required: false }
               - name: "photos"
                 label: "Photos du carrousel"
                 widget: "list"
