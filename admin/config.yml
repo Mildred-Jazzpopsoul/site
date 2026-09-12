@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Mildred-Jazzpopsoul/site  # <-- Remplacez par votre pseudo et nom de dépôt GitHub
+  repo: Mildred-Jazzpopsoul/site
   branch: main
 
 media_folder: "images"
@@ -8,117 +8,66 @@ public_folder: "images"
 
 collections:
   - name: "site_content"
-    label: "Contenu & Textes du Site"
+    label: "Gestion Globale du Site"
     files:
       - file: "content.json"
-        label: "Toutes les rubriques"
+        label: "Rubriques & Contenus"
         name: "content"
         fields:
-
-          # ==========================================
-          # 1. RUBRIQUE ACCUEIL / HERO
-          # ==========================================
+          # ACCUEIL
           - name: "hero"
             label: " Rubrique Accueil"
             widget: "object"
             fields:
-              - { label: "Titre principal du groupe", name: "title", widget: "string", default: "Nom du Groupe" }
-              - { label: "Sous-titre / Accroche", name: "subtitle", widget: "string", default: "Neon Rock / Synth" }
-              - { label: "Texte de description d'accueil", name: "description", widget: "text", required: false }
-              - { label: "Image de fond / Bannière", name: "bg_image", widget: "image", required: false }
-              - { label: "Texte du bouton principal", name: "cta_text", widget: "string", default: "Écouter le dernier album" }
-              - { label: "Lien du bouton", name: "cta_link", widget: "string", default: "#musique" }
+              - { label: "Titre principal", name: "title", widget: "string", default: "Nom du Groupe" }
+              - { label: "Sous-titre", name: "subtitle", widget: "string", default: "Neon Rock / Synth" }
+              - { label: "Image de fond", name: "bg_image", widget: "image", required: false }
 
-          # ==========================================
-          # 2. RUBRIQUE À PROPOS / BIOGRAPHIE
-          # ==========================================
+          # À PROPOS
           - name: "about"
             label: " Rubrique À Propos"
             widget: "object"
             fields:
-              - { label: "Titre de la section", name: "title", widget: "string", default: "À Propos du Groupe" }
-              - { label: "Texte de biographie / Présentation", name: "bio", widget: "text" }
-              - { label: "Photo du groupe / Illustration", name: "photo", widget: "image", required: false }
+              - { label: "Titre de section", name: "title", widget: "string", default: "À Propos" }
+              - { label: "Texte biographie", name: "bio", widget: "text" }
+              - { label: "Photo d'illustration", name: "photo", widget: "image", required: false }
 
-          # ==========================================
-          # 3. RUBRIQUE MUSIQUE & MÉDIAS
-          # ==========================================
+          # MÉDIAS / MUSIQUE
           - name: "media_section"
-            label: " Rubrique Musique & Médias"
+            label: " Rubrique Musique & Vidéos"
             widget: "object"
             fields:
-              - { label: "Titre de la rubrique", name: "title", widget: "string", default: "Musique & Vidéos" }
-              - { label: "Texte d'introduction de la rubrique", name: "intro_text", widget: "text", required: false }
+              - { label: "Titre de section", name: "title", widget: "string", default: "Musique & Vidéos" }
               - name: "tracks"
-                label: "Liste des morceaux & vidéos (Drag & drop pour réordonner)"
+                label: "Liste des morceaux / vidéos (Glisser-déposer pour réordonner)"
                 widget: "list"
-                summary: "{{fields.title}} ({{fields.type}})"
+                summary: "{{fields.title}}"
                 fields:
-                  - { label: "Titre du morceau / de la vidéo", name: "title", widget: "string" }
-                  - { label: "Description / Sous-titre", name: "description", widget: "string", required: false }
-                  - { label: "Type de contenu", name: "type", widget: "select", options: ["audio", "video", "youtube_embed", "spotify_embed"] }
-                  - { label: "Fichier audio ou vidéo (mp3/mp4)", name: "file", widget: "file", required: false }
-                  - { label: "Lien d'intégration (URL YouTube/Spotify)", name: "url", widget: "string", required: false }
-                  - { label: "Pochette / Vignette de présentation", name: "cover", widget: "image", required: false }
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Type", name: "type", widget: "select", options: ["audio", "video", "embed_youtube"] }
+                  - { label: "Fichier (mp3/mp4)", name: "file", widget: "file", required: false }
+                  - { label: "Lien YouTube/Spotify", name: "url", widget: "string", required: false }
 
-          # ==========================================
-          # 4. RUBRIQUE TOUR-BUS / AGENDA CONCERTS
-          # ==========================================
-          - name: "tour_section"
-            label: " Rubrique Agenda & Dates"
-            widget: "object"
-            fields:
-              - { label: "Titre de la rubrique", name: "title", widget: "string", default: "Dates de Tournée" }
-              - { label: "Texte de description", name: "description", widget: "text", required: false }
-              - { label: "URL Google Calendar d'intégration (iFrame)", name: "calendar_url", widget: "string", required: false }
-
-          # ==========================================
-          # 5. RUBRIQUE GALERIE PHOTOS
-          # ==========================================
+          # GALERIE PHOTOS
           - name: "gallery_section"
-            label: " Rubrique Galerie Photos"
+            label: " Galerie Photos"
             widget: "object"
             fields:
               - { label: "Titre de la galerie", name: "title", widget: "string", default: "Galerie Photos" }
-              - { label: "Texte de description", name: "description", widget: "text", required: false }
               - name: "photos"
-                label: "Photos (Ajouter, supprimer, réordonner par glisser-déposer)"
+                label: "Photos (Ajouter/Supprimer/Réordonner)"
                 widget: "list"
                 summary: "{{fields.caption}}"
                 fields:
-                  - { label: "Image / Photo", name: "image", widget: "image" }
-                  - { label: "Titre / Légende explicative", name: "caption", widget: "string", required: false }
+                  - { label: "Photo", name: "image", widget: "image" }
+                  - { label: "Légende", name: "caption", widget: "string", required: false }
 
-          # ==========================================
-          # 6. RUBRIQUE BOUTIQUE / MERCHANDISING
-          # ==========================================
-          - name: "merch_section"
-            label: " Rubrique Boutique / Merch"
-            widget: "object"
-            fields:
-              - { label: "Titre de la section", name: "title", widget: "string", default: "Boutique Officielle" }
-              - { label: "Texte d'accroche boutique", name: "description", widget: "text", required: false }
-              - name: "items"
-                label: "Articles en vente"
-                widget: "list"
-                summary: "{{fields.name}} - {{fields.price}}€"
-                fields:
-                  - { label: "Nom du produit", name: "name", widget: "string" }
-                  - { label: "Description du produit", name: "description", widget: "text", required: false }
-                  - { label: "Prix (€)", name: "price", widget: "number" }
-                  - { label: "Photo de l'article", name: "image", widget: "image" }
-                  - { label: "Lien de redirection / Panier d'achat", name: "link", widget: "string", required: false }
-
-          # ==========================================
-          # 7. RUBRIQUE CONTACT & RÉSEAUX SOCIAUX
-          # ==========================================
+          # CONTACT
           - name: "contact_section"
-            label: " Rubrique Contact & Réseaux"
+            label: " Contact & Liens"
             widget: "object"
             fields:
-              - { label: "Titre de la section contact", name: "title", widget: "string", default: "Contact & Booking" }
-              - { label: "Texte explicatif / Booking", name: "description", widget: "text", required: false }
+              - { label: "Titre section contact", name: "title", widget: "string", default: "Contact" }
               - { label: "Email de contact", name: "email", widget: "string", required: false }
               - { label: "Lien Facebook", name: "facebook_url", widget: "string", required: false }
               - { label: "Lien Instagram", name: "instagram_url", widget: "string", required: false }
-              - { label: "Lien YouTube", name: "youtube_url", widget: "string", required: false }
