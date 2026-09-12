@@ -1,10 +1,10 @@
 {
   "active_sections": [
-    "hero",
     "about",
     "media",
     "contact",
-    "gallery"
+    "gallery",
+    "agenda"
   ],
   "hero": {
     "logo": "/images/Logo1.jpg",
